@@ -1,12 +1,10 @@
-myApp.controller('getAnimalController', ['$scope', '$http', 'DataFactory', function($scope, $http, DataFactory) {
+myApp.controller('TaskController', ['$scope', '$http', 'DataFactory', function($scope, $http, DataFactory) {
     console.log('the controller is working');
 
     $scope.data = {};
     $scope.search = false;
     $scope.animalName = '';
-    $scope.animalTypes = [
-      'dog', 'cat', 'bird', 'rabbit', 'horse', 'pig', 'barnyard', 'reptile', 'smallfurry'
-    ];
+
 
 
 ///handle the select form

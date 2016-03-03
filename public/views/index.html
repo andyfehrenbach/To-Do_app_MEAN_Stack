@@ -3,7 +3,12 @@
 
 <head>
   <title>TO-DO APP MEAN STACK</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
   <link href="//fonts.googleapis.com/css?family=Droid+Serif:700,700italic" rel="stylesheet" type="text/css">
+
+
 
   <script type="text/javascript" src="/vendors/angular.js"></script>
   <script type="text/javascript" src="/vendors/angular-route.min.js"></script>
@@ -18,15 +23,9 @@
   <link rel="stylesheet" href="/styles/custom.css" />
 </head>
 
-<body>
+<body ng-app="myApp">
   <div class="wrapper">
-    <div class="popup hidden">
-      <form class="taskInput">
-        <input type="text" id="task" name="task" value="Add Task.."/>
 
-        <button id="submit-button"> OK </button>
-      </form>
-    </div>
 
     <header class="standardHeight toDo">
       <h1>To Do</h1>
@@ -39,6 +38,30 @@
     <header class="standardHeight marginTop" id="tasks">
       <h1>Tasks <i class="material-icons">add</i></h1>
     </header>
+    <div class="itemContainer">
+      <div class="halfHeight lineItem task">
+          <li>
+            some task goes here
+          </li>
+      </div>
+
+      <div class=" complete halfHeight lineItem task">
+          <i class="material-icons green">Done</i>
+      </div>
+
+      <div class=" remove halfHeight lineItem task">
+          <i class="material-icons">Clear</i>
+      </div>
+
+    </div>
+
+    <div class="popup hidden" ng-model="add-task">
+      <form class="taskInput">
+        <input type="text" id="task" name="task" value="Add Task.."/>
+
+        <button id="submit-button"> OK </button>
+      </form>
+    </div>
 
 
 
