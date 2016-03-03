@@ -1,30 +1,13 @@
 myApp.controller('TaskController', ['$scope', '$http', 'DataFactory', function($scope, $http, DataFactory) {
     console.log('the controller is working');
-
+    // store the reurned data to an array
     $scope.tasks = [];
-    $scope.dataFactory = DataFactory;
 
-//     $scope.data = {};
-//     $scope.search = false;
-//     $scope.animalName = '';
-//
-//
-//
-// ///handle the select form
-//
-//   $scope.animalSearch = function() {
-//     // check option value
-//     if($scope.animal != '') {
-//         // valid selection, do something
-//         $scope.search = true;
-//     } else {
-//       // invalid, reset bool
-//       $scope.search = false;
-//       $scope.text = 'add to favorites';
-//     }
-//     // console.log($scope.search);
-//
-//   };
+    //datafactory is a dependency, but also needs to be grough into scope.
+    $scope.dataFactory = DataFactory;
+    $scope.newTask = 'Add a new task..';
+
+
 
 ////
 
@@ -40,6 +23,21 @@ if($scope.dataFactory.taskData() === undefined) {
 
 
 //////
+
+$scope.addTask = function() {
+    console.log('addtask is running');
+        var newTask = {
+            task_name: $scope.newTask,
+            task_complete: false
+        };
+        console.log (newTask);
+
+        $http.post('/task', newTask).then(function(response) {
+            // $scope.people = response.data;
+            console.log('task posted to server');
+        });
+    };
+
 
     // $scope.addFavorite = function() {
     //   ///addd to favorites function will eventually go here

@@ -38,16 +38,14 @@
 
     <div class="popup hidden">
       <form class="taskInput">
-        <input type="text" id="task" name="task" value="Add Task.." />
+        <input type="text" id="task" name="task" value="Add Task.." ng-model="newTask" />
 
-        <button id="submit-button"><i class="material-icons">add</i>  </button>
+        <button id="submit-button" ng-click="addTask()"><i class="material-icons">add</i>  </button>
       </form>
     </div>
     <div class="itemContainer" ng-repeat="task in tasks">
       <div class="halfHeight lineItem task">
-        <li>
-          {{task.task_name}}
-        </li>
+        <li> {{task.task_name}} </li>
       </div>
 
       <div class=" complete halfHeight lineItem task">
