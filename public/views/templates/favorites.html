@@ -1,0 +1,17 @@
+<div class="row twelve columns content">
+  <div class="11 columns offset-by-one">
+    <h1 class="offset-by-one">Favorite Animals:<span class="number">  {{favoriteCount}}</span></h1></div>
+  <hr />
+  <div class="favorite-listing" ng-repeat="animal in favoriteAnimals">
+    <h2 class="pet-name"><span class="number">{{animal.pet_id}}:</span> {{animal.pet_name}}</h2>
+
+    <div class="row listing clearfix">
+      <div class="four columns offset-by-one frame">
+        <img ng-src="{{animal.pet_img_url}}" />
+      </div>
+      <div class="six columns desc">
+        <h5>{{animal.pet_desc}}...</h5>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="row twelve columns content">
+  <hr />
+  <h2 class="pet-name">{{animalRetrieved.name.$t}}</h2>
+
+    <div class="row listing clearfix">
+      <div class="four columns offset-by-one frame">
+        <img ng-src="{{animalRetrieved.media.photos.photo[2].$t}}" />
+        <button class="button-primary favorite" ng-click="addFavorite()">Add To Favorites</button>
+      </div>
+      <div class="six columns desc">
+        <h5>{{animalRetrieved.description.$t}}</h5>
+      </div>
+    </div>
+
+
+</div>

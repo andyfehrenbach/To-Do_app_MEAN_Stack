@@ -1,0 +1,232 @@
+/*main orange: #F08E33;    */
+/*hover orange: #FDAA44;   */
+/*div {
+  border: 1px solid #000;
+}*/
+
+body {
+  font-family: 'droid serif', 'georgia', serif;
+  font-style: italic;
+  font-weight: 400;
+}
+a {
+  color: #222;
+  text-decoration: none;
+  font-size: 1.4em;
+}
+
+.margin-bottom {
+  margin-bottom: 4em;
+}
+
+nav {
+  background: #F08E33;
+  text-transform: uppercase;
+  font-weight: bold;
+  height: 10vh;
+  max-height: 60px;
+  position: fixed;
+  padding-top: 0.7%;
+
+
+}
+nav li {
+  display: block;
+  margin: 0;
+  /*padding: 1em .25em;*/
+}
+nav li a:hover {
+  /*padding: 0 5px 3px 0;*/
+  /*border-bottom: 3px solid #fff;*/
+}
+nav ul {
+  margin: 0;
+  font-size: 110%;
+  /*line-height: 17px;*/
+  letter-spacing: 1px;
+}
+ nav button {
+  /*float: right;*/
+}
+
+.five.columns.logo {
+      margin-top: -1.3em;
+}
+
+select {
+  width: 16vh;
+}
+select:focus {
+  border:none;
+}
+
+option {
+  padding-left: 1em;
+}
+button.button-primary {
+  background-color: #fff;
+  color: #222;
+  margin: 0 2em;
+  transition: all .1s;
+  border-color: #F08E33;
+}
+
+button.button-primary:hover {
+  background-color: #FDAA44;
+  border-color: #FDAA44;
+}
+
+
+nav li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: all .1s;
+  font-style: normal;
+  font-size: 156%;
+  letter-spacing: 2px;
+  margin: 0 2rem;
+}
+
+h4 {
+  display: inline;
+}
+
+main {
+  /*height: 88vh;*/
+}
+
+a:hover {
+  color: #222;
+}
+
+.pet-name {
+  margin-top: -1.2em;
+    display: inline-block;
+    background: #fff;
+    padding: 0 .5em;
+    margin-left: 3vh;
+}
+
+.listing{
+  border-bottom: 4px solid #222;
+}
+
+.desc{
+  margin: -0.5em 0 2em 4%;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+
+.logo a {
+  text-transform: lowercase;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -1px;
+  font-size: 34px;
+  line-height: 2.4em;
+}
+
+.frame {
+  width: 100%;
+  height: 100%;
+  z-index: .25;
+  margin: 0 0 0 4%;
+}
+.frame img {
+  width: 100%;
+  overflow: hidden;
+      margin-bottom: 4em;
+}
+
+button.favorite {
+  width: 100%;
+  height: 100%;
+  font-size: 150%;
+  margin: 0 0 2em 0;
+  padding: 2px 5px;
+  border: 3px solid #FDAA44;
+  transition: all .1s;
+}
+
+button.favorite:hover {
+  background-color: #FDAA44;
+}
+.five.columns {
+  margin-top: -2em;
+  overflow: hidden;
+}
+.five h2 {
+  background: #fff;
+  display: inline-block;
+  z-index: 1;
+  padding-right: .5em;
+  padding-left: .5em;
+}
+h5 {
+  font-family: 'georgia', serif;
+  font-size: 1.6em;
+  letter-spacing: -.02rem;
+  font-style: normal;
+  line-height: 1.4;
+}
+h5::first-line {
+  font-weight: bold;
+  letter-spacing: .05rem;
+}
+hr {
+  margin: 0;
+  border: 2.5px solid #222;
+  margin-top: 8em;
+}
+.content {
+  margin-top: 1em;
+  background: #fff;
+}
+
+/*styling the favorites pane*/
+
+.favorite-listing {
+  margin-bottom: 5em;
+}
+
+.number {
+  color: #F08E33;
+  font-size: 125%;
+}
+
+/*styling the home page*/
+
+.jumbotron {
+  background: url("/images/dog.jpg"), no-repeat center center;
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.jumbotron h1 {
+  color: #fff;
+    opacity: .9;
+    font-size: 12vh;
+    border-bottom: 1.2vh solid #fff;
+    padding: 1vh 4vh;
+    text-shadow: -1vh 0.8vh 5vh #000;
+  }
+  footer {
+    background: #111;
+    color: #eee;
+    padding: .5em 0 0 1em;
+    height: 5vh;
+    /*font-size:%;*/
+    font-family: 'georgia', serif;
+    position: relative;
+  }
+
+  p.foot {
+    margin: 0;
+  }

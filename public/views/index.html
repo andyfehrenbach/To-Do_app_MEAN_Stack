@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>TO-DO APP MEAN STACK</title>
+  <link href="//fonts.googleapis.com/css?family=Droid+Serif:700,700italic" rel="stylesheet" type="text/css">
+
+  <script type="text/javascript" src="/vendors/angular.js"></script>
+  <script type="text/javascript" src="/vendors/angular-route.min.js"></script>
+
+  <script type="text/javascript" src="/scripts/app.js"></script>
+  <script type="text/javascript" src="/scripts/data_factory.js"></script>
+  <script type="text/javascript" src="/scripts/controllers/task_controller.js"></script>
+  <!-- <script type="text/javascript" src="/scripts/controllers/favorites.js"></script> -->
+
+  <link rel="stylesheet" href="/styles/normalize.css" />
+  <link rel="stylesheet" href="/styles/skeleton.css" />
+  <link rel="stylesheet" href="/styles/custom.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="popup hidden">
+      <form class="taskInput">
+        <input type="text" id="task" name="task" value="Add Task.."/>
+
+        <button id="submit-button"> OK </button>
+      </form>
+    </div>
+
+    <header class="standardHeight toDo">
+      <h1>To Do</h1>
+    </header>
+
+    <!-- <div class="addTask standardHeight">
+      <h2> Add New Task</h2>
+    </div> -->
+
+    <header class="standardHeight marginTop" id="tasks">
+      <h1>Tasks <i class="material-icons">add</i></h1>
+    </header>
+
+
+
+    <div class="taskList">
+    </div>
+
+  </div>
+
+</body>
+
+</html>
