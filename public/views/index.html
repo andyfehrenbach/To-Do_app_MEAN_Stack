@@ -35,6 +35,14 @@
     <header class="standardHeight marginTop" id="tasks" >
       <h1>Tasks <i class="material-icons">add</i></h1>
     </header>
+
+    <div class="popup hidden">
+      <form class="taskInput">
+        <input type="text" id="task" name="task" value="Add Task.." />
+
+        <button id="submit-button"><i class="material-icons">add</i>  </button>
+      </form>
+    </div>
     <div class="itemContainer" ng-repeat="task in tasks">
       <div class="halfHeight lineItem task">
         <li>
@@ -52,13 +60,7 @@
 
     </div>
 
-    <div class="popup hidden">
-      <form class="taskInput">
-        <input type="text" id="task" name="task" value="Add Task.." />
 
-        <button id="submit-button"> OK </button>
-      </form>
-    </div>
 
 
 
