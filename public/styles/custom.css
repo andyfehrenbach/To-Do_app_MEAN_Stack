@@ -115,7 +115,7 @@ header {
 }
 .popup form {
   width: 70%;
-}
+}*/
 #task, #submit-button {
   background-color: hsl(39, 26%, 76%);
   font-size: 1.2em;
@@ -141,7 +141,7 @@ header {
   margin-right: 0;
   text-align: left;
   padding-left: 1em;
-}*/
+}
 
 
 
@@ -149,7 +149,7 @@ header {
 
 header .material-icons {
   color: hsl(3, 64%, 57%);
-  margin: 14px 17px;
+  margin: 12px 17px;
   float: right;
   font-size: 36px;
   cursor: pointer;

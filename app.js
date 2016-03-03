@@ -1,32 +1,15 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var favorites = require('./routes/');
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var task = require('./routes/task');
+
 
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-//mongoose connect
-mongoose.connect('mongodb://localhost/to-do_app_mean_stack');
 
-mongoose.model(
-    'Task',
-    new Schema({
-        "task_name": String,
-        "task_complete": bool,
-    },
-    {
-        collection: 'tasks'
-    }
-));
-
-// assign schema to variable
-var Task = mongoose.model('Task');
-
-app.use('/favorites', favorites);
+app.use('/task', task);
 
 
 

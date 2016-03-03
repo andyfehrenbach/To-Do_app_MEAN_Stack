@@ -5,8 +5,8 @@ myApp.controller('FavoritesController', ['$scope', '$http', 'DataFactory', funct
 
   // if($scope.dataFactory.favoriteAnimalData() === undefined) {
           // initial load
-          $scope.dataFactory.retrieveFavorites().then(function() {
-              $scope.favoriteAnimals = $scope.dataFactory.favoriteAnimalData();
+          $scope.dataFactory.getTasks().then(function() {
+              $scope.tasks = $scope.dataFactory.favoriteAnimalData();
               $scope.favoriteCount = $scope.favoriteAnimals.length;
 
                   console.log('undefined: animalcount = ', $scope.favoriteCount);
@@ -20,7 +20,7 @@ myApp.controller('FavoritesController', ['$scope', '$http', 'DataFactory', funct
 
   $scope.addFavorite = function() {
     ///addd to favorites function will eventually go here
-    $scope.animalRetrieved.favorited = true;
+
         //POST to server
         $http.post('/favorites', $scope.animalRetrieved).then(function(response){
             console.log ('data sent to server');
