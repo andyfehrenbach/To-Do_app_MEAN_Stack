@@ -32,7 +32,7 @@
       <h2> Add New Task</h2>
     </div> -->
 
-    <header class="standardHeight marginTop" id="tasks" >
+    <header class="standardHeight marginTop" id="tasks">
       <h1>Tasks <i class="material-icons">add</i></h1>
     </header>
 
@@ -40,7 +40,8 @@
       <form class="taskInput">
         <input type="text" id="task" name="task" value="Add Task.." ng-model="newTask" />
 
-        <button id="submit-button" ng-click="addTask()"><i class="material-icons">add</i>  </button>
+        <button id="submit-button" ng-click="addTask()"><i class="material-icons" style="
+    font-size: 37px;">add</i> </button>
       </form>
     </div>
     <div class="itemContainer" ng-repeat="task in tasks">
@@ -49,14 +50,16 @@
       </div>
 
       <div class=" complete halfHeight lineItem task">
-        <i class="material-icons green">done</i>
+        <i class="material-icons ">done</i>
       </div>
 
-      <div class=" remove halfHeight lineItem task">
-        <i class="material-icons">clear</i>
+
+        <div class=" remove halfHeight lineItem task" ng-click="deleteTask(task._id)">
+          <i class="material-icons">clear</i>
+        </div>
       </div>
 
-    </div>
+
 
 
 

@@ -9,9 +9,9 @@ myApp.controller('TaskController', ['$scope', '$http', 'DataFactory', function($
 
 
 
-////
+//// handles the get route
 
-if($scope.dataFactory.taskData() === undefined) {
+if ($scope.dataFactory.taskData() === undefined) {
         // initial load
         $scope.dataFactory.dataFactoryRetrieveTasks().then(function() {
             $scope.tasks = $scope.dataFactory.taskData();
@@ -22,43 +22,33 @@ if($scope.dataFactory.taskData() === undefined) {
 
 
 
-//////
+////// handles the post route
 
-$scope.addTask = function() {
-    console.log('addtask is running');
-        var newTask = {
-            task_name: $scope.newTask,
-            task_complete: false
-        };
-        console.log (newTask);
-
-        $http.post('/task', newTask).then(function(response) {
-            // $scope.people = response.data;
-            console.log('task posted to server');
-        });
+$scope.addTask = function () {
+    var newTask = {
+        task_name: $scope.newTask,
+        task_complete: false
     };
+    console.log (newTask);
+    $scope.dataFactory.dataFactoryPostTasks(newTask).then(function() {
+        $scope.tasks = $scope.dataFactory.taskData();
+
+    });
+};
 
 
-    // $scope.addFavorite = function() {
-    //   ///addd to favorites function will eventually go here
-    //   $scope.animalRetrieved.favorited = true;
-    //       //POST to server
-    //       $http.post('/favorites', $scope.animalRetrieved).then(function(response){
-    //           console.log ('data sent to server');
-    //           // console.log('Async data response:', animal);
-    //       });
-    //
-    //       //SERVER POST route will query the DB
-    // };
 
-//////
-    // $scope.showFavorites = function () {
-    //     var dataFactory = DataFactory;
-    //
-    //     dataFactory.retrieveFavorites();
-    //
-    //     };
 
+$scope.deleteTask = function(id) {
+        console.log(id);
+        $http.delete('/task/' + id).then(function(response) {
+            $scope.dataFactory.dataFactoryRetrieveTasks().then(function() {
+                $scope.tasks = $scope.dataFactory.taskData();
+
+        console.log('retrieving from server after delete task');
+        });
+    });
+};
 
 }]);
 

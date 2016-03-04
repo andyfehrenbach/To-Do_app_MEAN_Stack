@@ -1,6 +1,6 @@
 myApp.factory('DataFactory', ['$http', function($http) {
     // PRIVATE
-    var taskData = undefined;
+    var taskData;
 
 
     var getTasks = function() {
@@ -12,6 +12,19 @@ myApp.factory('DataFactory', ['$http', function($http) {
 
         return promise;
     };
+
+    //addTask
+
+    var addTask = function(newTask) {
+
+            var promise = $http.post('/task', newTask).then(function(response) {
+                taskData = response.data;
+
+                console.log ('tasks got', taskData);
+
+            });
+            return promise;
+        };
 
 
     // var showFavorites = function () {
@@ -37,6 +50,9 @@ myApp.factory('DataFactory', ['$http', function($http) {
         },
         taskData: function () {
             return taskData;
+        },
+        dataFactoryPostTasks: function (newTask) {
+            return addTask(newTask);
         }
     };
 
