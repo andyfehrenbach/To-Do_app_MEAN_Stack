@@ -36,9 +36,7 @@ $scope.addTask = function () {
     });
 };
 
-
-
-
+/////handles the delete route
 $scope.deleteTask = function(id) {
         console.log(id);
         $http.delete('/task/' + id).then(function(response) {
@@ -50,24 +48,16 @@ $scope.deleteTask = function(id) {
     });
 };
 
+
+///UPDATE
+$scope.updateTask = function (id) {
+    $scope.dataFactory.dataFactoryUpdateTask(id).then(function () {$scope.dataFactory.dataFactoryRetrieveTasks().then(function() {
+        $scope.tasks = $scope.dataFactory.taskData();
+    });
+    });
+///add class
+
+};
+
+
 }]);
-
-
-// $scope.people = [];
-//     $scope.dataFactory = DataFactory;
-//     $scope.message = 'People!';
-//     $scope.formName = '';
-//
-//     if($scope.dataFactory.peopleData() === undefined) {
-//         // initial load
-//         $scope.dataFactory.retrieveData().then(function() {
-//             $scope.people = $scope.dataFactory.peopleData();
-//         });
-//     } else {
-//         $scope.people = $scope.dataFactory.peopleData();
-//     }
-//
-//     $scope.addPerson = function() {
-//         $scope.dataFactory.addName($scope.formName);
-//         $scope.formName = '';
-//     };

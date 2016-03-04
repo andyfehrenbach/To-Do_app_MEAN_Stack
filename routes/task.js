@@ -66,6 +66,25 @@ router.delete('/:id', function(req, res) {
     });
 });
 
+////update
+router.put('/:id', function(req, res){
+    Task.findByIdAndUpdate(
+        {_id: req.params.id},
+        {
+            $set: {task_complete: true}
+        },
+        function(err, data) {
+            if(err) {
+                console.log('ERR: ', err);
+            }
+
+            res.send(data);
+        }
+    );
+
+});
+
+
 
 
 

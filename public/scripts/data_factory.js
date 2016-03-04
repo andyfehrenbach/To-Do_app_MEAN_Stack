@@ -9,7 +9,6 @@ myApp.factory('DataFactory', ['$http', function($http) {
             taskData = response.data;
             console.log('Async data response:', taskData);
         });
-
         return promise;
     };
 
@@ -19,12 +18,20 @@ myApp.factory('DataFactory', ['$http', function($http) {
 
             var promise = $http.post('/task', newTask).then(function(response) {
                 taskData = response.data;
-
                 console.log ('tasks got', taskData);
-
             });
             return promise;
         };
+
+    var updateTask = function(id) {
+
+            var promise = $http.put('/task/' + id).then(function(response) {
+                taskData = response.data;
+                console.log ('tasks got', taskData);
+            });
+            return promise;
+        };
+
 
 
     // var showFavorites = function () {
@@ -53,6 +60,9 @@ myApp.factory('DataFactory', ['$http', function($http) {
         },
         dataFactoryPostTasks: function (newTask) {
             return addTask(newTask);
+        },
+        dataFactoryUpdateTask: function (id) {
+            return updateTask(id);
         }
     };
 
