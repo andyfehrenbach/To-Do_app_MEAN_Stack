@@ -218,3 +218,7 @@ header .material-icons {
 .green {
   color: hsl(158, 48%, 69%);
 }
+
+.clearfix {
+  overflow: hidden;
+}

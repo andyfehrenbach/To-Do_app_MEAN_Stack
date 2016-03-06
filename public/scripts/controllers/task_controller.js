@@ -1,11 +1,23 @@
 myApp.controller('TaskController', ['$scope', '$http', 'DataFactory', function($scope, $http, DataFactory) {
     console.log('the controller is working');
     // store the reurned data to an array
+    $scope.showAddTask = undefined;
     $scope.tasks = [];
 
-    //datafactory is a dependency, but also needs to be grough into scope.
+    //datafactory is a dependency, but also needs to be brought into scope.
     $scope.dataFactory = DataFactory;
     $scope.newTask = 'Add a new task..';
+
+
+    $scope.showHidden = function () {
+        $scope.showAddTask = true;
+    };
+
+    $scope.clear = function () {
+        $scope.newTask = '';
+    };
+
+
 
 
 
@@ -25,6 +37,7 @@ if ($scope.dataFactory.taskData() === undefined) {
 ////// handles the post route
 
 $scope.addTask = function () {
+    console.log($scope.newTask);
     var newTask = {
         task_name: $scope.newTask,
         task_complete: false
@@ -32,8 +45,9 @@ $scope.addTask = function () {
     console.log (newTask);
     $scope.dataFactory.dataFactoryPostTasks(newTask).then(function() {
         $scope.tasks = $scope.dataFactory.taskData();
-
+        // $scope.newTask = 'Add a new task..';
     });
+
 };
 
 /////handles the delete route

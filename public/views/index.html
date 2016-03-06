@@ -33,28 +33,28 @@
     </div> -->
 
     <header class="standardHeight marginTop" id="tasks">
-      <h1>Tasks <i class="material-icons">add</i></h1>
+      <h1>Tasks <i class="material-icons" >add</i></h1>
     </header>
 
     <div class="popup hidden">
-      <form class="taskInput">
-        <input type="text" id="task" name="task" value="Add Task.." ng-model="newTask" />
+      <form class="taskInput clearfix">
+        <input type="text" id="task" name="task" ng-model="newTask" ng-click="clear()" />
 
         <button id="submit-button" ng-click="addTask()"><i class="material-icons" style="
     font-size: 37px;">add</i> </button>
       </form>
     </div>
-    <div class="itemContainer" ng-repeat="task in tasks">
-      <div class="halfHeight lineItem task">
-        <li> {{task.task_name}} </li>
+    <div class="itemContainer" ng-repeat="task in tasks | orderBy: 'task_complete' " >
+      <div class="halfHeight lineItem task" ng-class="task.task_complete ? 'taskComplete':'' ">
+        <li > {{task.task_name}} </li>
       </div>
 
-      <div class=" complete halfHeight lineItem task" ng-click="updateTask(task._id)">
-        <i class="material-icons ">done</i>
+      <div class=" complete halfHeight lineItem task" ng-click="updateTask(task._id)" ng-class="task.task_complete ? 'taskComplete':'' ">
+        <i class="material-icons " >done</i>
       </div>
 
 
-        <div class=" remove halfHeight lineItem task" ng-click="deleteTask(task._id)">
+        <div class=" remove halfHeight lineItem task" ng-click="deleteTask(task._id)" ng-class="task.task_complete ? 'taskComplete':'' ">
           <i class="material-icons">clear</i>
         </div>
       </div>
