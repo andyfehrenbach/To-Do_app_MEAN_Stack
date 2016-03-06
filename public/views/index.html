@@ -33,11 +33,11 @@
     </div> -->
 
     <header class="standardHeight marginTop" id="tasks">
-      <h1>Tasks <i class="material-icons" >add</i></h1>
+      <h1>Tasks <i class="material-icons" ng-click="showHidden()">add</i></h1>
     </header>
 
     <div class="popup hidden">
-      <form class="taskInput clearfix">
+      <form class="taskInput clearfix" ng-show="showAddTask">
         <input type="text" id="task" name="task" ng-model="newTask" ng-click="clear()" />
 
         <button id="submit-button" ng-click="addTask()"><i class="material-icons" style="
@@ -59,14 +59,6 @@
         </div>
       </div>
 
-
-
-
-
-
-
-    <div class="taskList">
-    </div>
 
   </div>
 

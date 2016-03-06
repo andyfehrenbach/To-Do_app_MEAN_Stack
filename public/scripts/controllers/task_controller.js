@@ -45,7 +45,9 @@ $scope.addTask = function () {
     console.log (newTask);
     $scope.dataFactory.dataFactoryPostTasks(newTask).then(function() {
         $scope.tasks = $scope.dataFactory.taskData();
-        // $scope.newTask = 'Add a new task..';
+        //reset and hide the form
+        $scope.showAddTask = undefined;
+        $scope.newTask = 'Add a new task..';
     });
 
 };
